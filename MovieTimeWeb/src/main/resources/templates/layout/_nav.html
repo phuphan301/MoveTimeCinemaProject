@@ -1,0 +1,61 @@
+<header class="fixed-top" xmlns:th="http://wwww.thymeleaf.org">
+    <nav class="navbar navbar-expand-lg bg-light " aria-label="Twelfth navbar example">
+
+        <div class="container">
+            <div class="d-flex justify-content-center align-content-center logo_hd">
+                <a class="navbar-brand" href="#">
+                    <img th:src="@{|/assets/images/Logo_Cinema.png|}" alt="">
+                </a>
+            </div>
+            <div class="d-flex flex-lg-grow-0 flex-md-grow-1 flex-sm-grow-1 flex-grow-1 justify-content-end">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="sidebar offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-2 justify-content-around">
+                    <ul class="navbar-nav justify-content-lg-center align-items-center flex-grow-1 ">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" aria-current="page" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Lịch chiếu</a>
+                        </li>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Phim
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Phim đang chiếu</a></li>
+                                <li><a class="dropdown-item" href="#">Phim sắp chiếu</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Thành viên</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Sự kiện</a>
+                        </li>
+
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Giới thiệu</a>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex  justify-content-center align-items-center p-4 p-lg-0 gap-4 bg-light">
+                        <a href="#login" class="text-dark">Đăng nhập</a>
+                        <a href="#signup" class="text-white text-decoration-none px-3 py-1 rounded-4"
+                            style="background-color: #000000;">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

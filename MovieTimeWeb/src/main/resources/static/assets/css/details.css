@@ -1,0 +1,136 @@
+
+
+
+
+
+
+/* ==================HEADER========================== */
+
+@media (max-with: 991px) {
+    .sidebar {
+        backdrop-filter: blur(10px);
+    }
+}
+
+header .logo_hd img{
+  width: 15rem;
+  height: auto;
+}
+/* 
+.offcanvas-body .nav-item:hover{
+    border-bottom: 0.1rem solid rgb(237,38,71);
+
+}
+
+.nav-link {
+    font-size: 1.1rem;
+}
+
+.nav-link:hover{
+    color: rgb(237,38,71);
+}
+
+.dropdown-item:hover{
+    color: rgb(237,38,71);
+
+} */
+
+.navbar-nav{
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.nav-item .nav-link{
+    position: relative;
+}
+
+.nav-item .nav-link ::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: rgb(27, 24, 24);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.nav-item .nav-link:hover{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    
+}
+
+
+
+
+
+
+/* ===================BACKGROUND DETAILS=================== */
+
+.bg_details{
+    margin-top: 5rem;
+    height: auto;
+    justify-content: center;
+    /* object-fit: cover; */
+    
+}
+
+.bg_fillter .card_img {
+
+    height: auto;
+    width: auto;
+    border-radius: 0.2rem;
+    
+
+}
+
+.bg_fillter .card_img img{
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+.bg_details .lopphu{
+    background-color: rgba(0, 0, 0, 0.353);
+}
+
+.bg_details .theloai{
+    color: rgb(80, 160, 230);
+}
+
+.bg_details .mota button{
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 2px 6px;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.bg_details .mota .btn_muave{
+    background-color: rgb(237,38,71);
+    color: white;
+    border: 1px solid rgb(237,38,71);
+}
+
+.bg_details .mota_2 span{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bg_details .mota_2 a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+.bg_details .mota_2 p{
+    color: white;
+    font-size: 0.9rem;
+}
+.bg_details .mota_3 a{
+    color: rgb(237,38,71);
+}
