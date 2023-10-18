@@ -1,0 +1,281 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&display=swap');
+
+/* ==================HEADER========================== */
+
+@media (max-with: 991px) {
+    .sidebar {
+        backdrop-filter: blur(10px);
+    }
+}
+
+header .logo_hd img {
+    width: 15rem;
+    height: auto;
+}
+
+.offcanvas-body .nav-item{
+    border-bottom: 0.1rem solid rgb(237,38,71,0);
+
+}
+
+.offcanvas-body .nav-item:hover{
+    border-bottom: 0.1rem solid rgb(237,38,71);
+
+}
+
+.nav-link {
+    font-size: 1.1rem;
+}
+
+.nav-link:hover{
+    color: rgb(237,38,71);
+}
+
+.dropdown-item:hover{
+    color: rgb(237,38,71);
+}
+
+
+/* =======================LOGING================ */
+
+.modal_login .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 450px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal_login::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal_login .form button {
+    align-self: flex-end;
+}
+
+.modal_login .flex-column>label {
+    color: #151717;
+    font-weight: 600;
+}
+
+.modal_login .inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.modal_login .input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 85%;
+    height: 100%;
+}
+
+.modal_login .input:focus {
+    outline: none;
+}
+
+.modal_login .inputForm:focus-within {
+    border: 1.5px solid #2d79f3;
+}
+
+.modal_login .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.modal_login .flex-row>div>label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+.modal_login .span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal_login .button-submit {
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.modal_login .button-submit:hover {
+    background-color: #252727;
+}
+
+.modal_login .p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.modal_login .btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.modal_login .btn:hover {
+    border: 1px solid #2d79f3;
+    ;
+}
+
+
+/* ======================REGISTER============== */
+
+.modal_register .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: auto;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal_register::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal_register .form button {
+    align-self: flex-end;
+}
+
+.modal_register .flex-column>label {
+    color: #151717;
+    font-weight: 600;
+}
+
+.modal_register .inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.modal_register .input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 85%;
+    height: 100%;
+}
+
+.modal_register .input:focus {
+    outline: none;
+}
+
+.modal_register .inputForm:focus-within {
+    border: 1.5px solid #2d79f3;
+}
+
+.modal_register .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.modal_register .flex-row>div>label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+.modal_register .span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal_register .button-submit {
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.modal_register .button-submit:hover {
+    background-color: #252727;
+}
+
+.modal_register .p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.modal_register .btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.modal_register .btn:hover {
+    border: 1px solid #2d79f3;
+    ;
+}
+
+
+
+
