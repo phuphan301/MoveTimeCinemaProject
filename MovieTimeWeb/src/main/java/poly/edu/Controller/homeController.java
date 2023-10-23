@@ -11,8 +11,12 @@ public class homeController {
 	public String home() {
 		return "layout/home";
 	}
-	@RequestMapping("/order/detail")
-	public String order() {
-		return "order/_detail";
+	@RequestMapping("/product/detail")
+	public String detail() {
+		return "product/_detail";
+	}
+	@RequestMapping("/order/checkout")
+	public String checkout() {
+		return "order/_checkout";
 	}
 }

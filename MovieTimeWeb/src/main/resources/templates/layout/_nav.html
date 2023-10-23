@@ -8,7 +8,7 @@
 
             <div class="container">
                 <div class="d-flex justify-content-center align-content-center logo_hd">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" th:href="@{/home/index}">
                     <img th:src="@{|/assets/images/Logo_Cinema.png|}" alt="">
                     </a>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-2 justify-content-around">
                         <ul class="navbar-nav justify-content-lg-center align-items-center flex-grow-1 gap-2">
                             <li class="nav-item mx-2">
-                                <a class="nav-link hahaa" aria-current="page" href="#">Trang chủ</a>
+                                <a class="nav-link hahaa" aria-current="page" th:href="@{/product/detail}">Trang chủ</a>
                             </li>
                             <li class="nav-item mx-2">
                                 <a class="nav-link" href="#">Lịch chiếu</a>
