@@ -1,0 +1,209 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* =======================CHECKOUT================ */
+
+
+/* ------------Promotion-------------- */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hea-title{
+    background-color: rgb(18, 38, 63);
+}
+
+.checkout .promotion {
+    padding: 12px 0 12px 0;
+}
+
+/* .checkout .makhuyenmai{
+    padding: 0 12px 0 12px;
+} */
+
+/* .checkout .makhuyenmai input {
+    width: 250px;
+    border: 2px solid rgb(209, 209, 209);
+    border-radius: 4px;
+} */
+
+/* .checkout .makhuyenmai button {
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 4px;
+    background-color: rgb(237, 38, 71);
+    color: white;
+    font-weight: 500;
+    padding: 6px 15px;
+} */
+
+.checkout .makhuyenmai select{
+    width: 70%;
+}
+/* .checkout .makhuyenmai #vchet{
+    background-color: rgb(237, 38, 71);
+    color: white;
+
+} */
+
+/* .checkout .kmcuaban:hover {
+    color: black !important;
+} */
+
+
+/* ---------------method-payment-------------- */
+
+.checkout .pay-method {
+    padding: 12px 0 12px 0;
+}
+
+.checkout .list-pay input[type="radio"] {
+    border: 1px solid gray;
+}
+
+.checkout .list-pay input[type="radio"]:checked {
+    background-color: rgb(0, 183, 0);
+}
+
+.checkout .list-pay .form-check img {
+    width: 40px;
+    height: auto;
+    border-radius: 3px;
+    margin: 0 10px 0 12px;
+}
+
+.checkout .list-pay .form-check label {
+    color: rgb(77, 77, 77);
+}
+
+/* -------------Điều khoản------------ */
+.checkout .dieukhoan a {
+    color: black;
+}
+
+.checkout .dieukhoan input {
+    width: 25px;
+    height: 25px;
+}
+/* .checkout .dieukhoan #checkbox{
+    box-shadow: 0 0 10px rgba(237, 38, 71, 0.965);
+} */
+.checkout .dieukhoan #checkbox:hover{
+    border: 1px solid rgb(237, 38, 71);
+    cursor: pointer;
+}
+
+.checkout .dieukhoan #checkbox:focus{
+    box-shadow: 0 0 10px rgba(237, 38, 71, 0.965);
+    border: 1px solid rgb(237, 38, 71);
+    cursor: pointer;
+}
+
+.checkout .dieukhoan #checkbox:checked{
+    box-shadow: 0 0 10px rgba(237, 38, 71, 0);
+    border: 1px solid rgb(237, 38, 71);
+    cursor: pointer;
+}
+
+.checkout .dieukhoan a:hover {
+    color: rgb(237, 38, 71);
+    transition: 0.2s;
+}
+
+
+.warning-check small{
+    color: rgb(215, 160, 11);
+}
+
+.warning-check ion-icon{
+    color: rgb(215, 160, 11);
+    font-size: 20px;
+}
+
+
+/* ---------------DETAIL_PAY--------------- */
+
+.checkout .detail-pay {
+    padding: 12px 12px;
+}
+
+.checkout .detail-pay .card-img {
+    width: 120px;
+    height: auto;
+    border-radius: 3px;
+}
+
+.checkout .detail-pay .card-img img {
+    width: 120px;
+    height: auto;
+    border-radius: 3px;
+
+}
+
+.checkout .detail-pay .info-movie .dotuoi {
+    background-color: rgb(255, 167, 51);
+    border-radius: 2px;
+    padding: 2px 4px;
+    color: white;
+}
+
+.checkout .detail-pay .countdown {
+    color: rgb(146, 146, 146);
+    margin-bottom: 8px;
+}
+
+
+.checkout .detail-pay .countdown #time {
+    color: rgb(255, 69, 100);
+    margin: 0;
+    font-weight: 600;
+}
+
+.checkout .detail-pay .content-pay {
+    border-top: 7px solid rgb(237, 38, 71);
+    border-radius: 7px 7px 0 0;
+    padding: 12px 0 12px 0;
+}
+
+.checkout .detail-pay .time h6 {
+    margin: 0;
+}
+
+.checkout .detail-pay .fare h6 {
+    margin: 0;
+}
+
+.checkout .detail-pay .total h6 {
+    margin: 0;
+}
+
+.checkout .detail-pay .time,
+.fare {
+    padding: 12px 0;
+    border-bottom: 1px dashed rgb(112, 112, 112);
+}
+
+.checkout .detail-pay .total {
+    padding: 15px 0;
+    /* border-bottom: 1px dashed rgb(112, 112, 112); */
+}
+
+.checkout .detail-pay .total span {
+    color: rgb(255, 155, 24);
+    font-size: 18px;
+
+}
+
+.checkout .detail-pay .total em {
+    color: rgb(255, 155, 24);
+    font-size: 18px;
+}
+
+.checkout .detail-pay .btn-pay {
+    padding: 20px 0;
+}
+
+.checkout .detail-pay .btn-pay .pay {
+    width: 180px;
+    color: white;
+    font-weight: 500;
+}

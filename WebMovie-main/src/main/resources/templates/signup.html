@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+	<script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
+	<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> -->
+	<link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{|/css/header.css|}">
+	<link rel="stylesheet" th:href="@{|/css/footer.css|}">
+	<link rel="stylesheet" th:href="@{|/css/signin_up.css|}">
+
+	<title>Sign up | MovieTime</title>
+
+</head>
+
+<body ng-app="app" ng-controller="controller">
+
+	<div th:replace="~{/navbar/navbar}"></div>
+
+
+	<div class="signup">
+		<div class="container" id="container">
+			<div th:if="${param.error}">
+				Invalid username and password.</div>
+			<div th:if="${param.logout}">
+				You have been logged out.</div>
+			<div class="form-container sign-up">
+				<form class="form" method="post" role="form" th:action="@{/login}">
+					<h1>Sign In</h1>
+					<div class="social-icons">
+						<!-- <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a> -->
+						<a th:href="@{/oauth2/authorization/google}" class="icon"><i
+								class="fa-brands fa-google-plus-g"></i></a>
+					</div>
+					<span>Or use your email password</span>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="email" id="username" name="username" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="password" id="password" name="password" placeholder="Password">
+					</div>
+					<a th:href="@{/home/resetPassword}">Forget Your Password?</a>
+					<button type="submit" id="btn1">Sign In</button>
+				</form>
+			</div>
+			<div class="form-container sign-in">
+				<form>
+					<h1>Create Account</h1>
+					<div class="social-icons">
+						<!-- <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+						<a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>  -->
+						<a th:href="@{/oauth2/authorization/google}" class="icon"><i
+								class="fa-brands fa-google-plus-g"></i></a>
+					</div>
+					<span>Or use your email for registeration</span>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="text" ng-model="form.fullname" id="name_signup" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="text" ng-model="form.phonenumber" id="phonenumber_signup"
+							placeholder="Phone number">
+					</div>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="email" ng-model="form.email" id="email_signup" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<small>Error message</small>
+						<input type="password" ng-model="form.password" id="password_signup" placeholder="Password">
+					</div>
+					<div class="form-group d-flex">
+						<label for="formFile" class="custom-file-upload">
+							<i class="fa fa-cloud-upload"></i> Avatar
+						</label>
+						<div ng-show="showUploadSuccessMessage" role="alert" class="d-flex align-items-center">
+							<ion-icon name="checkmark-outline"></ion-icon>
+						</div>
+						<input ng-model="form.avatar" class="form-control" type="file" id="formFile"
+							onchange="angular.element(this).scope().imageChanged(this.files)" hidden>
+					</div>
+					<input ng-model="form.id" type="hidden" />
+					<button ng-click="checkAndcreateCustomer()" id="btn2">Sign Up</button>
+				</form>
+			</div>
+			<div class="toggle-container">
+				<div class="toggle">
+					<div class="toggle-panel toggle-right">
+						<h1>Welcome Back!</h1>
+						<p>Enter your personal details to use all of site features</p>
+						<button class="hidden" id="register">Sign In</button>
+					</div>
+					<div class="toggle-panel toggle-left">
+						<h1>Hello, Friend!</h1>
+						<p>Register with your personal details to use all of site features</p>
+						<button class="hidden" id="login">Sign Up</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Message_signup">
+		<div class="SignUp_sucssec" ng-show="showSuccessMessage" role="alert">
+			<i class="fa-solid fa-user-check fa-2xl" style="color: #00c227;"></i>
+			<small>
+				Registration successful! <br>
+				Please log in after 10 seconds!
+			</small>
+		</div>
+	</div>
+
+	<div th:replace="~{/navbar/_footer}"></div>
+
+
+
+	<script th:src="@{/js/signup.js}"></script>
+	<script th:src="@{/js/layout/main.js}"></script>
+	<script th:src="@{/js/layout/signin_up.js}"></script>
+</body>
+
+</html>

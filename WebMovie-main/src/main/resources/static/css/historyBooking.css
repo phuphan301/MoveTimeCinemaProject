@@ -1,0 +1,90 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.history_booking .title h3 {
+    color: white;
+    text-align: center;
+    /*     color: rgb(18, 38, 63); */
+    background: linear-gradient(30deg, rgba(237, 38, 71, 0.011), rgb(233, 69, 94) 50%, rgba(255, 255, 255, 0));
+    border-radius: 3px;
+}
+
+.history_booking .info_history_booking {
+    border-bottom: 1px solid rgb(237, 38, 71);
+}
+
+
+.history_booking .img_movie .card-body img {
+    width: 120px;
+    height: auto;
+    border-radius: 3px;
+}
+
+.history_booking .info_history_booking .name_movie h5 {
+    color: rgb(18, 38, 63);
+    font-weight: 600px;
+}
+
+.history_booking .info_history_booking .info_booking #name_cinema {
+    font-size: 18px;
+    color: rgb(60, 89, 123);
+}
+
+.history_booking .info_history_booking .info_booking #lp {
+    font-size: 16px;
+    color: rgb(60, 89, 123);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.history_booking .info_history_booking .info_booking label {
+    font-size: 15px;
+    color: rgb(18, 38, 63);
+    font-weight: 600;
+}
+
+.history_booking .info_history_booking .info_booking #name_cinema a {
+    font-size: 13px;
+    color: #498eb9;
+    text-decoration: none;
+}
+
+.history_booking .info_history_booking .info_booking .suat_chieu span {
+    font-size: 16px;
+    color: rgb(60, 89, 123);
+}
+
+
+.history_booking .info_history_booking .info_booking .gia_trangthai span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: rgb(60, 89, 123);
+}
+.history_booking .info_history_booking .info_booking .gia_trangthai #my-Status {
+    margin-left: 10px;
+    font-size: 17px;
+    color: rgb(60, 89, 123);
+    border: 1px solid rgb(60, 89, 123);
+    border-radius: 3px;
+}
+.history_booking .info_history_booking .info_booking .btn{
+    margin-left: 120px;
+}
+.history_booking .info_history_booking .info_booking .btn a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: rgb(237, 38, 71);
+    border-radius: 3px;
+    padding: 3px 5px;
+}

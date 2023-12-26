@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" th:href="@{|/css/header.css|}">
+    <link rel="stylesheet" th:href="@{|/css/home.css|}">
+    <link rel="stylesheet" th:href="@{|/css/details.css|}">
+    <link rel="stylesheet" th:href="@{|/css/footer.css|}">
+    <link rel="stylesheet" th:href="@{|/css/infopage.css|}">
+
+
+    <title>Policy | MovieTime</title>
+
+</head>
+
+
+<body ng-app="app" ng-controller="controller">
+
+    <div th:replace="~{/navbar/navbar}"></div>
+
+
+
+    <!-- ========================GIỚI THIỆU TEXT===================== -->
+
+    <section>
+        <div class="container text cauhoi">
+            <h1>Câu hỏi thường gặp</h1>
+            <p>
+                Trung tâm hỗ trợ khách hàng của MovieTime sẽ hỗ trợ các vấn đề liên quan đến mua vé trực tuyến và thanh
+                toán tại website movietime.com.
+                Các vấn đề khác chúng tôi sẽ không tiếp nhận, vui lòng xem thông tin trên website hoặc liên hệ trực tiếp
+                với rạp để được giải quyết.
+            </p>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Rạp MovieTime nằm ở đâu?</h2>
+                    <p>MovieTime không phải là rạp phim. MovieTime là website thông tin điện ảnh
+                        cung cấp các thông tin như: Lịch chiếu - Đặt vé phim, Tin tức điện ảnh,
+                        Review / Đánh giá phim, dữ liệu phim ảnh...</p>
+                    <p>Kể từ tháng 11/2018, MovieTime triển khai bán vé trực tuyến cho các cụm rạp trong cả nước.</p>
+
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Tôi có thể mua vé các cụm rạp nào tại MovieTime?</h2>
+                    <p>Hiện tại bạn đã có thể mua vé các hệ thống rạp:</p>
+                    <p>
+                    </p>
+                    <ul>
+                        <li><a href="https://movietime.com/he-thong-rap/beta-cineplex/">Beta Cineplex</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/mega-gs-cinemas/">Mega GS Cinemas</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/cinestar/">CineStar</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/dcine/">Dcine</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/cinemax/">Cinemax</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/starlight/">Starlight</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/rio-cinemas/">Rio Cinemas</a></li>
+                        <li><a href="https://movietime.com/he-thong-rap/touch-cinema/">Touch Cinema</a></li>
+                    </ul>
+                    <p>Các hệ thống khác, MovieTime sẽ kết nối trong thời gian sắp tới.</p>
+
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Tôi đặt vé trước có được không?</h2>
+                    <p>MovieTime không hỗ trợ đặt vé, bạn cần thanh toán để nhận vé.</p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+
+                    <h2 class="font-weight-bold">Thanh toán xong thì sao nữa?</h2>
+                    <p>Sau khi thanh toán thành công bạn sẽ nhận được mã vé qua email và tin nhắn đã chọn.
+                        Bạn mang mã vé đến quầy để đổi vé giấy. Nếu không nhận được
+                        email / tin nhắn, hãy liên hệ với MovieTime để được hỗ trợ ngay nhé.</p>
+
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Tôi mua nhầm vé, có đổi / trả được không?</h2>
+                    <p>Vé đã mua không thể đổi hoặc hoàn tiền.</p>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Tôi đã bị trừ tiền nhưng không nhận được mã vé?</h2>
+                    <p>Nếu bạn mua vé ở các cụm rạp MovieTime hỗ trợ mua trực tuyến, hãy liên hệ
+                        ngay thông qua số hotline, chúng tôi sẽ xử lý trong tối đa 15 phút.</p>
+                    <p>Đối với các cụm rạp khác, hãy sang website của rạp hoặc gọi số hotline của rạp để được hỗ trợ.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================END GIỚI THIỆU TEXT===================== -->
+
+
+
+    <div th:replace="~{/navbar/_footer}"></div>
+
+    <!-- js -->
+
+    <script th:src="@{/js/search.js}"></script>
+    <script th:src="@{/js/layout/main.js}"></script>
+</body>
+
+</html>

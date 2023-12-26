@@ -1,0 +1,471 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <main>
+        <section>
+            <div class="bg_details">
+                <div class="bg_fillter"
+                    style="background: url(/images/Banner/banner.jpg) center center/cover no-repeat;">
+
+                    <div class="lopphu">
+                        <div class="container justify-content-center py-4">
+                            <div class="row d-flex">
+                                <div class=" col-lg-2 col-md-2 col-sm-4 col-5 pt-2 align-items-center">
+                                    <div class="card card_img">
+                                        <a href="detail.html"></a>
+                                        <img th:src="@{|/images/Phimsapchieu/phimdc5.webp|}" class="card-img-top"
+                                            alt="display error">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col ps-3 pe-0">
+                                    <h3 class="mb-0">
+                                        <a href="detail.html" class="text-decoration-none text-white"
+                                            th:inline="text">The Last Wife</a>
+                                    </h3>
+                                    <p class="theloai" th:inline="text">Romance, Drama</p>
+                                    <div class="container row justify-content-around pe-0">
+                                        <div class="col-lg-7 p-0">
+                                            <div class="mota d-flex justify-content-start gap-1 mb-3">
+                                                <button type="button">Like</button>
+                                                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                                    data-bs-target="#myModalTrailer">Trailer</button>
+                                                <button type="button"
+                                                        class="btn_muave" data-bs-toggle="modal"
+                                                data-bs-target="#myModalMuave" >Tickets</button>
+                                                
+                                            </div>
+                                            <p class="mota_docx text-white" th:inline="text">
+                                                After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the infamous holiday.
+                                            </p>
+
+                                            <div class="row mota_2">
+                                                <div class="col">
+                                                    <span> <ion-icon name="calendar-outline"></ion-icon> Release Date</span>
+                                                    <br>
+                                                    <a href="detail.html">03/11/2023</a>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="text-break"><ion-icon name="time-outline"></ion-icon>
+                                                        Duration</span> <br>
+                                                    <p>132 minutes</p>
+                                                </div>
+                                                <div class="col">
+                                                    <span><ion-icon name="person-add-outline"></ion-icon> Age Restricted
+                                                    </span> <br>
+                                                    <p>T18</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 ps-lg-3 ps-sm-0 ps-md-0 mota_3">
+                                            <p>
+                                                <strong class="text-white">Actors</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">Kaity Nguyễn, Thuận Nguyễn, Ngọc Diệp, Quang Thắng</a>
+                                                </span>
+                                            </p>
+                                            <p>
+                                                <strong class="text-white">Directors</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">Victor Vũ</a>
+                                                </span>
+                                            </p>
+                                            <p>
+                                                <strong class="text-white">Producers</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">Marvel Cinematic Universe</a>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--     <iframe class="video_responsive" width="100%" height="573px"
+					id="tm-video" th:src="${'https://www.youtube.com/embed/'+{movie1.TRAILER}}">
+	</iframe> -->
+
+        <!-----------------------------EMBED VIDEO TRAILER MODAL----------------------->
+
+        <!-- Modal -->
+        <div class="modal modal_trailer fade" id="myModalTrailer" data-bs-backdrop="true" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                src="https://www.youtube.com/embed/52RyHDKZ9TY?si=HzQ4DSq0fRxfAoO6"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------END EMBED VIDEO TRAILER MODAL----------------------->
+
+
+        <!-----------------------------BUY TICKET MODAL----------------------------->
+
+
+        <!-- Modal -->
+        <div class="modal modal_buyticket fade" id="myModalMuave" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                <div class="modal-content p-1">
+                    <div class="modal-header p-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <ul class="toggle-tabs-day list-unstyled d-flex mb-0" id="viewday">
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio" checked="">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <input class="radio-input" type="radio" name="radio">
+                                    <div class="day d-flex justify-content-around ">
+                                        <div class="d-flex flex-column gap-1 pt-1 day1">
+                                            <span>10</span>
+                                            <embed>Mon</embed>
+                                        </div>
+                                        <div class="day2">
+                                            <strong>16</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="toggle-tabs-map  list-unstyled d-flex mb-0">
+                            <li class="current">
+                                <a href="" class="active">
+                                    <span>Hồ Chí Minh</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Hà Nội</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Đà Nẵng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Cần Thơ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Đồng Nai</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Hải Phòng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Quảng Ninh</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Bà Rịa-Vũng Tàu</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Bình Định</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Bình Dương</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Đắk Lắk</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Yên Bái</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Kiên Giang</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Hà Tĩnh</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Phú Yên</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Đồng Tháp</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Hưng Yên</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Khánh Hòa</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Kon Tum</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Lạng Sơn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Nghệ An</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Phú Thọ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Quảng Ngãi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Sơn La</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>Thái Nguyên</span>
+                                </a>
+
+                            </li>
+                            <li class="last">
+                                <a href="">
+                                    <span>Tiền Giang</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="toggle-tabs-D list-unstyled d-flex gap-1 mb-0">
+                            <li class="current">
+                                <a href="">
+                                    <span>2D Vietsub</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="active">
+                                    <span>IMAX2D Vietsub</span>
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="">
+                                    <span>4DX2D Vietsub</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content showtimes">
+                            <div class="site-mvt">
+                                <div class="site">
+                                    <h3>MovieTime Hùng Vương Plaza</h3>
+                                </div>
+
+                                <div class="cinema">
+                                    <h4>2D Cinema</h4>
+                                </div>
+                                <ul class="products-grid-movie tab-showtime list-unstyled d-flex">
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>10:20 AM</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>10:20 AM</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="site-mvt">
+                                <div class="site">
+                                    <h3>MovieTime Thảo Điền Pearl</h3>
+                                </div>
+
+                                <div class="cinema">
+                                    <h4>2D Cinema</h4>
+                                </div>
+                                <ul class="products-grid-movie tab-showtime list-unstyled">
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>12:45 PM</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="site-mvt">
+                                <div class="site">
+                                    <h3>MovieTime Hùng Vương Plaza</h3>
+                                </div>
+
+                                <div class="cinema">
+                                    <h4>2D Cinema</h4>
+                                </div>
+                                <ul class="products-grid-movie tab-showtime list-unstyled d-flex">
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>10:20 AM</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>10:20 AM</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="site-mvt">
+                                <div class="site">
+                                    <h3>MovieTime Thảo Điền Pearl</h3>
+                                </div>
+
+                                <div class="cinema">
+                                    <h4>2D Cinema</h4>
+                                </div>
+                                <ul class="products-grid-movie tab-showtime list-unstyled">
+                                    <li class="item">
+                                        <a th:href="@{/home/checkout}">
+                                            <span>12:45 PM</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

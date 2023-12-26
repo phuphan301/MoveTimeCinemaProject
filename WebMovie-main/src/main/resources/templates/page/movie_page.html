@@ -1,0 +1,86 @@
+<section xmlns:th="http://www.thymeleaf.org">
+    <div class="container mt-4">
+        <ul class="nav nav-tabs mb-3 d-flex justify-content-center" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="ex1-tab-1" data-bs-toggle="tab" href="#ex1-tabs-1" role="tab"
+                    aria-controls="ex1-tabs-1" aria-selected="true">Now Showing</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="ex1-tab-2" data-bs-toggle="tab" href="#ex1-tabs-2" role="tab"
+                    aria-controls="ex1-tabs-2" aria-selected="false">Coming Soon</a>
+            </li>
+        </ul>
+        <div class="tab-content " id="ex1-content">
+            <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 grid-phimdc">
+                    <div class="col p-2" ng-repeat="item in filteredMoviesToDay | limitTo:moviesLimit">
+                        <div class="card">
+                            <a th:href="@{/movie/{{item.id_MOVIE.id}}}">
+
+                                <img ng-src="https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/{{item.id_MOVIE.image}}.jpg" class="card-img-top"
+                                    alt="{{item.id_MOVIE.name}}-image" />
+
+                            </a>
+                            <div class="card-body p-2">
+                                <a th:href="@{/movie/{{item.id_MOVIE.id}}}">
+                                    <span class="card-title">{{item.id_MOVIE.name}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a th:href="@{/home/nowshowing}" class="cta text-decoration-none">
+                        <span class="hover-underline-animation"> View more </span>
+                        <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg"
+                            id="arrow-horizontal">
+                            <path transform="translate(30)"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                data-name="Path 10" id="Path_10"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 grid-phimdc">
+                    <div class="col p-2" ng-repeat="item in filteredMovies | limitTo:moviesLimit">
+                        <div class="card">
+                            <a th:href="@{/movie/{{item.id_MOVIE.id}}}">
+                                <img ng-src="https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/{{item.id_MOVIE.image}}.jpg" class="card-img-top"
+                                    alt="Hollywood Sign on The Hill" />
+                            </a>
+                            <div class="card-header d-flex justify-content-between align-items-center py-2 px-2">
+                                <small class="text-muted">{{item.date | date:'dd-MM-yyyy'}}</small>
+                            </div>
+                            <div class="card-body p-2">
+                                <h6 class="card-title">{{item.id_MOVIE.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a th:href="@{/home/comingsoon}" class="cta text-decoration-none">
+                        <span class="hover-underline-animation"> View more </span>
+                        <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg"
+                            id="arrow-horizontal">
+                            <path transform="translate(30)"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                data-name="Path 10" id="Path_10"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--dùng để fix bug validate kiểu chữa cháy :)) -->
+<div class="mt-2 form-group" hidden>
+    <button id="btnmovie" ng-click="checkAndCreateMovie()" type="submit">Create</button>
+    <button id="btnmovie2" ng-click="checkAndUpdateMovie()" type="submit">Update</button>
+    <!-- <button id="btn" ng-click="delete(form.id)" type="submit">Delete</button> -->
+    <button id="btn3" ng-click="reset()" type="submit">Reset</button>
+</div>
+<!--dùng để fix bug validate kiểu chữa cháy  -->

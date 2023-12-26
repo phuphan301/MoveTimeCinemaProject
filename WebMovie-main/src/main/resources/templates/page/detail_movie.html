@@ -1,0 +1,211 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <main th:object="${movie1}">
+        <section>
+            <div class="bg_details">
+                <div class="bg_fillter"
+                    style="background: url(/images/Banner/banner.jpg) center center/cover no-repeat;">
+
+                    <div class="lopphu">
+                        <div class="container justify-content-center py-4">
+                            <div class="row d-flex">
+                                <div class=" col-lg-2 col-md-2 col-sm-4 col-5 pt-2 align-items-center">
+                                    <div class="card card_img">
+                                        <a href="detail.html"></a>
+                                        <img th:src="@{|https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/${movie1.IMAGE}.jpg|}" class="card-img-top"
+                                            alt="display error">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col ps-3 pe-0">
+                                    <h3 class="mb-0">
+                                        <a href="detail.html" class="text-decoration-none text-white"
+                                            th:inline="text">[[${movie1.NAME}]]</a>
+                                    </h3>
+                                    <p class="theloai" th:inline="text">[[${movie1.GERNE}]]</p>
+                                    <div class="container row justify-content-around pe-0">
+                                        <div class="col-lg-7 p-0">
+                                            <div class="mota d-flex justify-content-start gap-1 mb-3">
+                                                <button type="button" hidden>Like</button>
+                                                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                                    data-bs-target="#myModalTrailer">Trailer</button>
+                                                <button type="button"
+                                                        class="btn_muave" data-bs-toggle="modal"
+                                                data-bs-target="#myModalMuave" ng-click="loadMovie_ScheduledsById(inputValue)" >Tickets</button>
+                                                
+                                            </div>
+                                            <p class="mota_docx text-white" th:inline="text">
+                                                [[${movie1.DESCRIPTION}]]
+                                            </p>
+
+                                            <div class="row mota_2">
+                                                <div class="col">
+                                                    <span> <ion-icon name="calendar-outline"></ion-icon> Release Date</span>
+                                                    <br>
+                                                    <a href="detail.html">[[${movie1.PUBLISH_DATE}]]</a>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="text-break"><ion-icon name="time-outline"></ion-icon>
+                                                        Duration</span> <br>
+                                                    <p>[[${movie1.TIME}]] minutes</p>
+                                                </div>
+                                                <div class="col">
+                                                    <span><ion-icon name="person-add-outline"></ion-icon> Age Restricted
+                                                    </span> <br>
+                                                    <p>[[${movie1.AGE}]]</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 ps-lg-3 ps-sm-0 ps-md-0 mota_3">
+                                            <p>
+                                                <strong class="text-white">Actors</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">[[${movie1.ACTORS}]]</a>
+                                                </span>
+                                            </p>
+                                            <p>
+                                                <strong class="text-white">Directors</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">[[${movie1.DIRETORS}]]</a>
+                                                </span>
+                                            </p>
+                                            <p>
+                                                <strong class="text-white">Producers</strong> <br>
+                                                <span>
+                                                    <a href="#" class="text-decoration-none">Arnon Milchan, Gareth
+                                                        Edwards,
+                                                        Jim Spencer</a>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- movieId -->
+        <input id="movieId" th:value="@{${movie1.ID}}" type="hidden">
+
+        <!-----------------------------EMBED VIDEO TRAILER MODAL----------------------->
+
+        <!-- Modal -->
+        <div class="modal modal_trailer fade" id="myModalTrailer" data-bs-backdrop="true" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                th:src="${'https://www.youtube.com/embed/'+{movie1.TRAILER}}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------END EMBED VIDEO TRAILER MODAL----------------------->
+
+
+        <!-----------------------------BUY TICKET MODAL----------------------------->
+
+
+        <!-- Modal -->
+        <div class="modal modal_buyticket fade" id="myModalMuave" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                <div class="modal-content p-1">
+                    <div class="modal-header p-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <ul class="choose_date">
+                            <li class="gr_date" ng-repeat="date in displayedDates">
+                                <div class="gr">
+                                    <label>
+                                    <input type="radio" id="idRadio" name="id" ng-model="selectedDate"
+                                        value="{{date}}" ng-click="filterDate(selectedDate)">
+                                        <span>{{date}}</span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+ 						 <div class="tab-content showtimes">
+                            
+                            <div class="site-mvt" ng-repeat="movieOfCinemas in filterMovieDate" ng-if="isFutureEvent(movieOfCinemas)">
+                                <div ng-if="noDataMessage">{{noDataMessage}}</div>
+                                <div class="site d-flex flex-column">
+                                    <span>{{movieOfCinemas.id_ROOM.id_CINEMAS.name}}</span>
+                                    <em>{{movieOfCinemas.id_ROOM.id_CINEMAS.address}} - <a target="_blank" href="https://www.google.com/maps/search/{{movieOfCinemas.id_ROOM.id_CINEMAS.address}}">Bản đồ</a></em>
+                                </div>
+
+                                <div class="cinema d-flex align-items-center gap-3">
+                                    <h4>{{movieOfCinemas.id_ROOM.name}} Vietsub</h4> - <h4> Room {{movieOfCinemas.id_ROOM.id}}
+                                    </h4>
+                                </div>
+                                <ul class="products-grid-movie tab-showtime list-unstyled">
+                                    <!-- <li class="item" sec:authorize="!isAuthenticated()">
+                                        <a th:href="@{/login}">
+                                            {{movieOfCinemas.time_START}}
+                                        </a>
+                                    </li>
+                                    <li class="item" sec:authorize="isAuthenticated()">
+                                        <a
+                                            th:href="@{/booking/{{movieOfCinemas.id}}}">
+                                            {{movieOfCinemas.time_START}}
+                                        </a>
+                                    </li> -->
+                                    <!-- ng-if="noDataMessage === null" -->
+                                    <li class="item">
+                                        <a  ng-if="trangthai"
+                                            th:href="@{/booking/{{movieOfCinemas.id}}}">
+                                            {{movieOfCinemas.time_START}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						 
+						 <table class="table" hidden>
+						 	<div ng-if="noDataMessage">{{noDataMessage}}</div>
+						  	<thead>
+							    <tr>
+							      <th>MovieName</th>
+							      <th>TimeStart</th>
+							      <th>Room</th>
+							      <th>Cinema</th>
+							      <th>Address</th>
+							      <th>DateStart</th>
+							    </tr>
+						  	</thead>
+						  	<tbody>
+							    <tr ng-repeat="movieOfCinemas in filterMovieDate" ng-if="isFutureEvent(movieOfCinemas)">
+							      <td>{{movieOfCinemas.id_MOVIE.name}}</td>
+							      <td>{{movieOfCinemas.time_START}}</td>
+							      <td>{{movieOfCinemas.id_ROOM.id}}</td>
+							      <td>{{movieOfCinemas.id_ROOM.name}}</td>
+							      <td>{{movieOfCinemas.id_ROOM.id_CINEMAS.name}}</td>
+							      <td>{{movieOfCinemas.id_ROOM.id_CINEMAS.address}}</td>
+							      <td>{{movieOfCinemas.date}}</td>
+							      <td sec:authorize="!isAuthenticated()">
+							      //tu sua
+							      	<a th:href="@{/home}">Dang nhap</a>
+							      </td>
+							      <td sec:authorize="isAuthenticated()">
+							      	<a th:href="@{/booking/{{movieOfCinemas.id}}}">Booking</a>
+							      </td>
+							    </tr>
+						  	</tbody>
+						 </table> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+

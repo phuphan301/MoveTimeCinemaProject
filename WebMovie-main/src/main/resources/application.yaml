@@ -1,0 +1,26 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: tiendat060709@gmail.com
+    password: yxjn plqr dinf qwdx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: true
+    test-connection: false
+    protocol: smtp
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 433347320103-9daj5vb7mr4t28n77v4700p8m5hl4g8s.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile

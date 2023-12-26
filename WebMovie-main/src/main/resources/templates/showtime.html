@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" th:href="@{|/css/header.css|}">
+    <!-- <link rel="stylesheet" th:href="@{|/css/home.css|}"> -->
+    <!-- <link rel="stylesheet" th:href="@{|/css/details.css|}"> -->
+    <link rel="stylesheet" th:href="@{|/css/footer.css|}">
+    <link rel="stylesheet" th:href="@{|/css/now_coming_movie.css|}">
+
+
+
+    <title>Showtime | MovieTime</title>
+
+</head>
+
+
+<body ng-app="app" ng-controller="controller">
+
+    <div th:replace="~{/navbar/navbar}"></div>
+
+
+
+    <!-- ========================SHOWTIME===================== -->
+
+    <section>
+        <div class="container showtime mt-3">
+            <div class="header_title">
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <i class="fa-solid fa-clock fa-xl" style="color: #ed2647;"></i>
+                    <h5>Showtime</h5>
+                </div>
+            </div>
+            <div class="list_movie mt-4">
+                <div class="row  grid-phimdc mb-3" ng-repeat="item in upcomingMovies">
+                    <div class="col-md-5 px-2 py-2 d-flex flex-column justify-content-center" id="ccc">
+                        <div class="row" id="bg-info">
+                            <div class="col-md-6  py-2">
+                                <a th:href="@{/movie/{{item.id}}}">
+                                    <img ng-src="https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/{{item.image}}.jpg"
+                                        class="card-img-top" alt="Hollywood Sign on The Hill" />
+                                </a>
+                            </div>
+                            <div class="col-md-6  py-2 ps-0 info-movie d-flex flex-column gap-2">
+                                <h3>{{item.name}}</h3>
+                                <div>
+                                    <span id="age">{{item.age}}</span>
+                                </div>
+                                <h5>{{item.gerne}}</h5>
+
+                                <span>{{item.time}} minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 px-0 py-2 d-flex flex-column justify-content-center" id="showtime">
+                        <div class="movie-info">
+
+                            <div ng-repeat="(date, times) in item.schedule" class="my-2">
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center" id="date">
+                                            <span>
+                                                {{ date | date:'dd/MM/yyyy' }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="ms-2">
+                                        <!-- <ul class="m-0 p-0 d-flex flex-wrap gap-2">
+                                                <li class="p-0 m-0 list-unstyled" ng-repeat="time in times">{{ time | date:'HH:mm' }}</li>
+                                            </ul> -->
+                                        <div class=" d-flex flex-wrap align-items-center">
+
+                                            <div ng-repeat="time in times" id="time">
+                                                <a  th:href="@{/movie/{{item.id}}}">
+                                                    {{ time | date:'HH:mm' }}
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================END SHOWTIME===================== -->
+
+    <div th:replace="~{/navbar/_footer}"></div>
+
+    <!-- js -->
+
+    <!-- <script th:src="@{/js/movie_scheduled.js}"></script> -->
+    <script th:src="@{/js/showtime.js}"></script>
+    <script th:src="@{/js/layout/main.js}"></script>
+</body>
+
+</html>

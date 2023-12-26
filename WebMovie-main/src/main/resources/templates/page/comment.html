@@ -1,0 +1,186 @@
+<section xmlns:th="http://www.thymeleaf.org">
+	<div class="container comment mt-4">
+		<div class="row">
+			<div class="col-md-8">
+				<h4>Comments</h4>
+				<div class="d-flex flex-column gap-2 mt-4 mb-4 cmt">
+					<!-- Input cho bình luận -->
+					<!-- <input ng-model="content" id="inputData" placeholder="Viết bình luận..." /> -->
+					<textarea ng-model="content" id="inputData" ng-keyup="autoExpand()" rows="1"
+						placeholder="Viết bình luận..." ng-maxlength="255" required>
+					</textarea>
+					<div ng-show="content.length >= 255" style="color: red;">Maximum character limit reached!</div>
+					<div class="btn_cmt">
+						<div sec:authorize="!isAuthenticated()">
+							<!-- Nếu chưa đăng nhập, hiển thị link đăng nhập -->
+							<a th:href="@{/signin}">
+								Hãy đăng nhập để bình luận
+							</a>
+						</div>
+						<div sec:authorize="isAuthenticated()" class="me-0">
+							<!-- Nếu đã đăng nhập, hiển thị nút thêm bình luận -->
+							<button ng-click="addComment()" ng-disabled="!content || content.length > 255">Bình
+								luận</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Hiển thị danh sách bình luận -->
+				<div ng-repeat="com in listComments | limitTo:commentLimit" class="comment-container">
+
+					<div ng-if="!com.id_COMMENT" class="cmtcha">
+						<!-- Thông tin của bình luận -->
+						<div class="comment-info">
+							<div class="avatar">
+								<img ng-src="https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/{{com.id_CUSTOMER.avatar}}.jpg"
+									ng-if="com.id_CUSTOMER.avatar" alt="Avatar">
+								<img ng-src="/images/no-avatar.png" ng-if="!com.id_CUSTOMER.avatar" alt="No Avatar">
+							</div>
+							<div class="comment-details">
+								<h6 class="comment-author">{{com.id_CUSTOMER.fullname}}</h6>
+								<small class="comment-time">{{com.time_COMMENT}}</small>
+							</div>
+						</div>
+
+						<!-- Nội dung bình luận -->
+						<div class="comment-content">{{com.content}}</div>
+
+						<!-- Nếu đã đăng nhập, hiển thị nút thêm bình luận con -->
+						<button id="btn-reply"
+							ng-click="toggleReply(com); setcontentChilren(com.id_CUSTOMER.fullname)">Phản hồi</button>
+
+
+						<!-- Phần trả lời bình luận -->
+						<div ng-if="com.showReply" class="comment-reply d-flex align-items-center gap-2">
+							<textarea ng-model="contentChilren" id="inputData" placeholder="Phản hồi..."
+								ng-keyup="autoExpand()" rows="1" ng-maxlength="255" required>{{replyToUsername}}
+						    </textarea>
+							<div ng-show="content.length >= 255" style="color: red;">Maximum character limit reached!
+							</div>
+							<div sec:authorize="!isAuthenticated()">
+								<!-- Nếu chưa đăng nhập, hiển thị link đăng nhập -->
+								<a th:href="@{/signin}">
+									Hãy đăng nhập để trả lời
+								</a>
+							</div>
+							<div sec:authorize="isAuthenticated()" class="d-flex align-items-center gap-2">
+								<!-- Nếu đã đăng nhập, hiển thị nút thêm bình luận con -->
+								<!-- Nút "Hủy" để ẩn form trả lời -->
+								<button id="huy" ng-click="cancelReply(com)">Hủy</button>
+								<button ng-click="addCommentChildren(com.id, contentChilren)"
+									ng-disabled="!contentChilren || contentChilren.length > 255">Trả lời</button>
+							</div>
+						</div>
+
+					</div>
+
+					<div ng-if="com.id_COMMENT" class="cmtcon">
+						<div class="comment-info">
+							<div class="avatar">
+								<img ng-src="https://res.cloudinary.com/dgxlsc5tu/image/upload/v1702434593/{{com.id_CUSTOMER.avatar}}.jpg"
+									ng-if="com.id_CUSTOMER.avatar" alt="Avatar">
+								<img ng-src="/images/no-avatar.png" ng-if="!com.id_CUSTOMER.avatar" alt="No Avatar">
+							</div>
+							<div class="comment-details">
+								<h6 class="comment-author">{{com.id_CUSTOMER.fullname}}</h6>
+								<small class="comment-time">{{com.time_COMMENT}}</small>
+							</div>
+						</div>
+
+						<!-- Nội dung bình luận -->
+						<div class="comment-content">{{com.content}}</div>
+						<!-- Nếu đã đăng nhập, hiển thị nút thêm bình luận con -->
+						<!-- <button id="btn-reply"
+							ng-click="toggleReply(com); setcontentChilren(com.id_CUSTOMER.fullname)">Phản hồi</button> -->
+
+						<!-- Phần trả lời bình luận -->
+						<div ng-if="com.showReply" class="comment-reply d-flex align-items-center gap-2" hidden>
+							<textarea ng-model="contentChilren" id="inputData" ng-keyup="autoExpand()" rows="1"
+								ng-maxlength="255" required>
+								{{replyToUsername}}
+						    </textarea>
+							<div ng-show="content.length >= 255" style="color: red;">Maximum character limit reached!
+							</div>
+							<div sec:authorize="!isAuthenticated()">
+								<!-- Nếu chưa đăng nhập, hiển thị link đăng nhập -->
+								<a th:href="@{/signin}">
+									Hãy đăng nhập để trả lời
+								</a>
+							</div>
+							<div sec:authorize="isAuthenticated()" class="d-flex align-items-center gap-2">
+								<!-- Nếu đã đăng nhập, hiển thị nút thêm bình luận con -->
+								<!-- Nút "Hủy" để ẩn form trả lời -->
+								<button id="huy" ng-click="cancelReply(com)">Hủy</button>
+								<button ng-click="addCommentChildren(com.id, contentChilren)"
+									ng-disabled="!contentChilren || contentChilren.length > 255">Trả lời</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="showcmt">
+					<button ng-click="showMoreComments()">
+						Show more
+					</button>
+				</div>
+			</div>
+			<div class="col-md-4">
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<div hidden>
+	<div>
+		<!-- input cha -->
+		<input ng-model="content" placeholder="content" />
+		<br />
+		<div sec:authorize="!isAuthenticated()">
+			<a th:href="@{/login}">
+				Hay dang nhap rui comment
+			</a>
+		</div>
+		<div sec:authorize="isAuthenticated()">
+			<button ng-click="addComment()">Add</button>
+		</div>
+	</div>
+
+	<ul ng-repeat="com in listComments">
+		<li>{{com.id_CUSTOMER.fullname}}</li>
+		<li>{{com.content}}</li>
+		<li>{{com.time_COMMENT}}</li>
+		<li>
+			<!-- input con -->
+			<input ng-model="contentChilren" placeholder="content" />
+			<div sec:authorize="!isAuthenticated()">
+				<a th:href="@{/login}">
+					Hay dang nhap rui tra loi tuong tac
+				</a>
+			</div>
+			<div sec:authorize="isAuthenticated()">
+				<button ng-click="addCommentChildren(com.id, contentChilren)">Add</button>
+			</div>
+		</li>
+	</ul>
+
+</div>
+
+
+<div ng-repeat="comment in listComments" hidden>
+	<div ng-if="!comment.id_COMMENT">
+		<!-- Comment cha -->
+		<strong>{{ comment.id_CUSTOMER.fullname }}</strong>: {{ comment.content }}
+	</div>
+	<div ng-if="comment.id_COMMENT">
+		<!-- Comment con -->
+		<span style="margin-left: 50px;">
+			<strong>{{ comment.id_CUSTOMER.fullname }}</strong>: {{ comment.content }}
+		</span>
+	</div>
+</div>
